@@ -1,0 +1,42 @@
+/* 1KB Hero Section – Minified SCSS → ~980B compiled CSS (gzipped) */
+$p:linear-gradient(135deg,#667eea,#764ba2);$a:linear-gradient(45deg,#ffd89b,#19547b);$w:#fff;
+.hero-section{background:$p;color:$w;position:relative;overflow:hidden;min-height:100vh}
+.hero-section::before{content:'';position:absolute;inset:-50%;width:200%;height:200%;background:radial-gradient(circle,rgba(255,255,255,.1)1px,#0000 1px);background-size:50px 50px;animation:m 20s linear infinite;opacity:.3}
+.hero-content{padding:2rem 0;text-align:center}
+.hero-title{font-size:clamp(2rem,5vw,3.5rem);font-weight:700;margin:150px 0 1rem;animation:f .8s}
+.hero-title .highlight{background:$a;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;animation:g 3s ease infinite}
+.hero-subtitle{font-size:clamp(1.2rem,2.5vw,1.8rem);font-weight:600;margin:0 auto 1.5rem;max-width:800px;animation:f .8s .3s both}
+.cursor{display:inline-block;animation:b 1s infinite}
+.hero-description{font-size:clamp(1rem,2vw,1.2rem);max-width:600px;margin:0 auto 2rem;animation:f .8s .6s both}
+.hero-buttons{display:flex;gap:1rem;flex-wrap:wrap;justify-content:center;animation:f .8s .9s both}
+.btn{padding:.875rem 2rem;border-radius:50px;font-weight:600;border:none;cursor:pointer;transition:.3s}
+.btn:hover{transform:translateY(-3px)}
+.btn-primary{background:$a;color:#fff;box-shadow:0 5px 15px rgba(255,216,155,.3);animation:g 3s infinite}
+.btn-primary:hover{box-shadow:0 10px 25px rgba(255,216,155,.4)}
+.btn-outline{border:2px solid #fff;background:0;color:#fff}
+.btn-outline:hover{background:#fff;color:#667eea}
+.hero-image{height:400px;display:flex;align-items:center;justify-content:center;margin-top:3rem}
+.floating-card{background:rgba(255,255,255,.15);backdrop-filter:blur(20px);border-radius:20px;padding:2rem;border:1px solid rgba(255,255,255,.3);box-shadow:0 20px 40px rgba(0,0,0,.2);max-width:350px;width:90%;animation:l 4s infinite}
+.floating-card h4,.floating-card p{opacity:0;animation:f .6s forwards;text-align:center;color:#fff}
+.floating-card p{font-size:1.3rem;font-weight:700;background:$a;-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+.floating-card h4:first-child{animation-delay:1s}
+.floating-card p:first-of-type{animation-delay:1.2s}
+.floating-card h4:nth-child(3){animation-delay:1.4s}
+.floating-card p:last-of-type{animation-delay:1.6s}
+.scroll-indicator{position:absolute;bottom:2rem;left:50%;transform:translateX(-50%);animation:f 2s 2s both;cursor:pointer}
+.scroll-indicator:hover{transform:translateX(-50%) scale(1.1)}
+.mouse{width:30px;height:50px;border:2px solid rgba(255,255,255,.7);border-radius:15px;position:relative}
+.wheel{width:4px;height:8px;background:#fff;border-radius:2px;position:absolute;top:8px;left:50%;transform:translateX(-50%);animation:s 2s infinite}
+
+/* Keyframes – shortened names */
+@keyframes m{to{transform:translate(50px,50px)}}
+@keyframes f{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:none}}
+@keyframes g{0%,100%{background-position:0 50%}50%{background-position:100% 50%}}
+@keyframes l{50%{transform:translateY(-10px)}}
+@keyframes b{50%{opacity:0}}
+@keyframes s{to{transform:translateX(-50%) translateY(20px);opacity:0}}
+
+/* Responsive – combined */
+@media(max-width:991px){.hero-title{margin-top:120px}.hero-image{height:350px;margin-top:2rem}}
+@media(max-width:768px){.hero-title{margin-top:100px}.hero-image{height:300px}.hero-buttons{flex-direction:column;align-items:center}.btn{max-width:250px;width:100%}}
+@media(max-width:480px){.hero-title{margin-top:80px;font-size:1.8rem}.hero-subtitle{font-size:1.1rem}.hero-image{height:250px}}

@@ -1,0 +1,50 @@
+<section id="home" class="hero-section">
+  <div class="container">
+    <div class="row align-items-center min-vh-100">
+      <div class="col-lg-6">
+        <div class="hero-content">
+          <h1 class="hero-title">
+            Hi, I'm <span class="highlight">Abubakar Rafique</span>
+          </h1>
+          <h2 class="hero-subtitle">
+            {{ typedText }}<span class="cursor">|</span>
+          </h2>
+          <p class="hero-description">
+            Innovative problem solver with 2+ years of experience in designing and developing 
+            web applications. Passionate about creating efficient, scalable solutions that make a difference.
+          </p>
+          <div class="hero-buttons">
+            <button class="btn btn-primary" (click)="downloadResume()">
+              <span>Download Resume</span>
+            </button>
+            <button class="btn btn-outline" (click)="scrollToSection('contact')">
+              <span>Get In Touch</span>
+            </button>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-lg-6">
+        <div class="hero-image">
+          <div class="floating-card">
+            <div class="card-content">
+              
+              <h4>Availability</h4>
+              <p class="status-open">Open for Work</p>
+              
+              <h4>Experience</h4>
+              <p>2+ Years</p>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="scroll-indicator" (click)="onScrollIndicatorClick()">
+    <div class="mouse">
+      <div class="wheel"></div>
+    </div>
+  </div>
+</section>
