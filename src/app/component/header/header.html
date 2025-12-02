@@ -1,0 +1,39 @@
+<nav class="navbar" [class.scrolled]="isScrolled">
+  <div class="container">
+
+    <!-- Logo with Image -->
+    <a class="logo" (click)="scrollToSection('home'); $event.preventDefault()">
+      <img src="web-logo1.png" alt="Abubakar" class="logo-img">
+      <!-- Optional text next to logo (uncomment if you want) -->
+      <!-- <span class="logo-text">Abubakar</span> -->
+    </a>
+
+    <!-- Hamburger Menu -->
+    <div 
+      class="menu-toggle" 
+      (click)="toggleMenu()" 
+      [class.active]="isMenuOpen"
+      aria-label="Toggle menu">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </div>
+
+    <!-- Nav Links -->
+    <ul class="nav-links" [class.active]="isMenuOpen">
+      <li (click)="closeMenu()"><a (click)="scrollToSection('home')"    routerLinkActive="active">Home</a></li>
+      <li (click)="closeMenu()"><a (click)="scrollToSection('about')"   routerLinkActive="active">About</a></li>
+      <li (click)="closeMenu()"><a (click)="scrollToSection('skills')"  routerLinkActive="active">Skills</a></li>
+      <li (click)="closeMenu()"><a (click)="scrollToSection('projects')" routerLinkActive="active">Projects</a></li>
+      <li (click)="closeMenu()"><a (click)="scrollToSection('experience')" routerLinkActive="active">Experience</a></li>
+      <li (click)="closeMenu()"><a (click)="scrollToSection('contact')" routerLinkActive="active">Contact</a></li>
+
+      <li class="btn-wrapper" (click)="closeMenu()">
+        <a class="btn-primary" (click)="scrollToSection('contact')">
+          Get Started
+        </a>
+      </li>
+    </ul>
+
+  </div>
+</nav>
