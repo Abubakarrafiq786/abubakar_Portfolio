@@ -1,0 +1,40 @@
+<section id="skills" class="skills-section" #skillsSection>
+  <!-- Scroll Indicator -->
+  <div class="scroll-indicator">
+    <div class="scroll-line">
+      <div class="scroll-progress" [style.height.%]="scrollProgress"></div>
+    </div>
+    <div 
+      class="scroll-dot" 
+      *ngFor="let section of sections; let i = index"
+      [class.active]="activeSection === i"
+      (click)="scrollToSection(i)"
+      [attr.title]="section">
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="what-i-do" #whatIDoSection>
+      <h1 class="main-title">What I do</h1>
+      <p class="description">
+        I am a Full Stack Developer specializing in Angular and .NET Core. With expertise in building scalable web applications, 
+        I focus on creating efficient, user-friendly solutions. I have strong experience in both frontend and backend development, 
+        database management, and modern DevOps practices. Currently pursuing my Bachelor's in Software Engineering, 
+        I'm passionate about leveraging cutting-edge technologies to solve real-world problems.
+      </p>
+    </div>
+
+    <div class="skills-header" #skillsHeader>
+      <h2 class="section-title">Skills</h2>
+    </div>
+    
+    <div class="skills-grid" #skillsGrid>
+      <div class="skill-card" *ngFor="let skill of skills">
+        <div class="skill-icon-wrapper">
+          <img [src]="skill.icon" [alt]="skill.name" class="skill-icon">
+        </div>
+        <h3 class="skill-name">{{ skill.name }}</h3>
+      </div>
+    </div>
+  </div>
+</section>
