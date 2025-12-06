@@ -1,0 +1,49 @@
+<section id="experience" class="experience-section" data-aos="fade-up">
+  <div class="container">
+    <div class="section-header" data-aos="fade-down" data-aos-delay="100">
+      <h2 class="section-title">
+        <span class="gradient-text">Work Experience</span>
+      </h2>
+      <p class="section-subtitle">My professional journey so far</p>
+    </div>
+
+    <div class="timeline">
+      <div 
+        *ngFor="let exp of experiences; let i = index" 
+        class="timeline-item"
+        data-aos="fade-up"
+        [attr.data-aos-delay]="150 + (i * 150)"
+        data-aos-anchor=".section-header">
+        
+        <div class="timeline-marker">
+          <div class="marker-pulse"></div>
+        </div>
+        
+        <div class="timeline-content">
+          <div class="timeline-header">
+            <h3 class="company">{{ exp.company }}</h3>
+            <span class="period">{{ exp.period }}</span>
+          </div>
+          
+          <h4 class="position">{{ exp.position }}</h4>
+          
+          <ul class="description-list">
+            <li *ngFor="let desc of exp.description; let last = last" 
+                [class.last]="last">
+              <span>{{ desc }}</span>
+            </li>
+          </ul>
+
+        <div class="technologies">
+  <span 
+    *ngFor="let tech of exp.technologies; let techIndex = index"
+    class="tech-tag"
+    [style.--delay]="(techIndex * 0.1) + 's'">
+    {{ tech }}
+  </span>
+</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
