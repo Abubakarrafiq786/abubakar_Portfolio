@@ -11,7 +11,7 @@ import { FormsModule } from '@angular/forms';
 export class Contact {
     contactInfo = {
     email: 'workwithabubakarrafique@gmail.com',
-    phone: '+92 340 006437',  
+    phone: '+92 340 0069437',  
     location: 'Lahore, Punjab, Pakistan'
   };
     socialLinks = [
@@ -24,8 +24,8 @@ export class Contact {
   email = '';
   message = '';
   isSubmitted = false; 
-  openWhatsApp() {
-    const phone = '+92340006437'; // Replace with actual number
+  openWhatsApp() {  
+    const phone = '+923400069437'; // Replace with actual number
     const message = 'Hello Abubakar! I came across your portfolio and would like to connect with you.';
     const url = `https://wa.me/${phone}?text=${encodeURIComponent(message)}`;
     window.open(url, '_blank');
