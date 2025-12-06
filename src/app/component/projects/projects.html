@@ -1,0 +1,71 @@
+<section class="projects-section">
+  <div class="container">
+    <div class="section-header">
+      <h2 class="section-title">Featured Projects</h2>
+      <p class="section-subtitle">Showcasing some of my development journey</p>
+    </div>
+
+    <div class="projects-grid">
+      <div *ngFor="let project of projects" 
+           class="project-card"
+           [style.background-color]="project.bgColor">
+        
+        <div class="card-content">
+          <!-- Project Image -->
+          <div class="project-image-container">
+            <img [src]="project.image" 
+                 [alt]="project.title"
+                 class="project-image"
+                 (error)="onImageError($event, project.icon)">
+            <div class="project-icon" [style.color]="project.textColor">
+              {{ project.icon }}
+            </div>
+          </div>
+
+          <div class="project-number" [style.color]="project.textColor">
+            {{ project.id }}
+          </div>
+
+          <div class="project-info">
+            <div class="project-header">
+              <h3 class="project-title" [style.color]="project.textColor">
+                {{ project.title }}
+              </h3>
+              <span *ngIf="project.featured" 
+                    class="featured-badge"
+                    [style.color]="project.textColor">
+                Featured
+              </span>
+            </div>
+
+            <p class="project-description" [style.color]="project.textColor">
+              {{ project.description }}
+            </p>
+
+            <div class="project-meta">
+              <div class="meta-item" [style.color]="project.textColor">
+                <span class="meta-label">Duration:</span>
+                <span class="meta-value">{{ project.duration }}</span>
+              </div>
+              <div class="meta-item" [style.color]="project.textColor">
+                <span class="meta-label">Role:</span>
+                <span class="meta-value">{{ project.role }}</span>
+              </div>
+            </div>
+
+            <div class="technologies">
+              <span *ngFor="let tech of project.technologies" 
+                    class="tech-tag"
+                    [style.color]="project.textColor"
+                    [style.border-color]="project.textColor">
+                {{ tech }}
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <div class="card-decoration" [style.border-color]="project.textColor"></div>
+      </div>
+    </div>
+  </div>
+</section>
