@@ -1,0 +1,63 @@
+<section id="contact" class="contact-section">
+  <div class="content-wrapper">
+
+    <!-- LEFT SIDE FORM -->
+    <div class="form-area">
+      <h2>Let’s talk</h2>
+      <p class="subtitle">
+        Feel free to reach out for any project, collaboration, or question.
+      </p>
+
+      <form #contactForm="ngForm"  (ngSubmit)="onSubmit(contactForm)">
+        <div class="field">
+          <label>Your Name</label>
+          <input type="text" placeholder="Enter your name">
+        </div>
+
+        <div class="field">
+          <label>Your Email</label>
+          <input type="email" placeholder="Enter your email">
+        </div>
+
+        <div class="field">
+          <label>Your Message</label>
+          <textarea placeholder="Write something..."></textarea>
+        </div>
+
+        <button type="submit" class="send-btn">Send Message</button>
+          <div *ngIf="isSubmitted" class="success-message">
+            Thank you! Your message has been prepared for sending.
+          </div>
+      </form>
+    </div>
+
+    <!-- RIGHT SIDE IMAGE -->
+    <div class="image-wrapper">
+      <div class="blob"></div>
+      <img src="/Profile/Profile_3.png" alt="profile" class="profile-img">
+    </div>
+
+  </div>
+
+  <!-- FLOATING SOCIAL ICONS -->
+  <div class="side-icons">
+        <div class="social-links">
+          <h4>Follow Me</h4>
+          <div class="social-icons">
+            <button 
+              class="social-icon whatsapp"
+              (click)="openWhatsApp()">
+              <i class="fab fa-whatsapp"></i>
+            </button>
+          </div>
+        </div>
+    <a  *ngFor="let social of socialLinks" 
+              [href]="social.url" 
+              target="_blank" 
+              class="social-icon"
+              [style.background]="social.color">
+              <i [class]="social.icon"></i>
+            </a>
+    
+  </div>
+</section>
